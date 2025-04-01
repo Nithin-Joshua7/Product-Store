@@ -18,6 +18,6 @@ mongoose.connect(url)
 
 app.use("/products",router)
 
-app.listen(4000,"localhost",()=>{
+app.listen(process.env.PORT ||4000,()=>{
     console.log("Server is running at http://localhost:4000")
 })
