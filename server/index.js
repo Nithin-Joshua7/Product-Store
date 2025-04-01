@@ -5,7 +5,11 @@ import cors from "cors"
 import router from "./routes/product.route.js"
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "https://product-store-blush.vercel.app", // Replace with your frontend's URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 //Database Connection
 mongoose.connect(url)
